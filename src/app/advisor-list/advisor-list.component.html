@@ -1,0 +1,41 @@
+<div class="container custom-container-2">
+
+  
+    <div class="no-data text-center" *ngIf="advisor.length == 0">
+    <p>There is no advisor added yet!</p>
+    <button class="btn btn-outline-primary" routerLink="/create-advisor">Add advisor</button>
+  </div>
+
+  <div *ngIf="advisor.length !== 0">
+    <h3 class="mb-3 text-center">advisors List</h3>
+
+    <div class="col-md-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col"> Id</th>
+            <th scope="col">Lastname</th>
+            <th scope="col">firstname</th>
+            <th scope="col">Login</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let a of advisor">
+            <td>{{a.id}}</td>
+            <td>{{a.lastname}}</td>
+            <td>{{a.firstname}}</td> 
+            <td >{{a.Login}}</td>
+                <td>
+              <button class="btn btn-info mr-1" routerLink="/advisor-show/{{a.id}}">Show</button>
+              <button class="btn btn-warning mr-1" routerLink="/advisor-edit/{{a.id}}">Edit</button>
+              <button class="btn btn-danger" (click)="deleteAdvisor(a.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</div>

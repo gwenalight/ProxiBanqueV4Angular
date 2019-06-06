@@ -1,0 +1,44 @@
+<div class="container custom-container">
+    <div class="col-md-12">
+        <form #mainForm="ngForm">
+            <h3 class="mb-3 text-center">Update Client</h3>
+
+            <div class="form-group">
+                <input type="text" [(ngModel)]="clientDetails.lastname" name="lastname" [value]="clientDetails.lastname"
+                    class="form-control" placeholder="lastname">
+
+
+
+                <input type="text" [(ngModel)]="clientDetails.firstname" name="firstname"
+                    [value]="clientDetails.firstname" class="form-control" placeholder="firstname">
+
+
+
+                <input type="text" [(ngModel)]="clientDetails.login" name="login" [value]="clientDetails.login"
+                    class="form-control" placeholder="Login">
+
+                <input type="email" [(ngModel)]="clientDetails.email" name="email" class="form-control"
+                    placeholder="email">
+
+
+                <input type="text" [(ngModel)]="clientDetails.phonenum" name="phonenum" [value]="clientDetails.phonenum"
+                    class="form-control" placeholder="phonenum">
+
+
+                <input type="text" [(ngModel)]="clientDetails.adress" name="adress" [value]="clientDetails.adress"
+                    class="form-control" placeholder="adress">
+
+                <input type="text" [(ngModel)]="clientDetails.postalcode" name="postalcode" class="form-control"
+                    placeholder="postalcode">
+
+                <input type="text" [(ngModel)]="clientDetails.city" name="city" [value]="clientDetails.city"
+                    class="form-control" placeholder="city">
+
+
+
+
+                <button class="btn btn-success btn-lg btn-block" (click)="updateClient()">Update Client</button>
+            </div>
+        </form>
+    </div>
+</div>

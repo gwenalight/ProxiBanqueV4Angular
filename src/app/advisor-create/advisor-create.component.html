@@ -1,0 +1,23 @@
+<div class="container custom-container">
+    <div class="col-md-12">
+        <form #mainForm="ngForm">
+            <h3 class="mb-3 text-center">Create advisor</h3>
+
+            <div class="form-group">
+                <input type="text" [(ngModel)]="advisorDetails.lastname" name="lastname"  class="form-control" placeholder="lastname">
+
+
+
+                <input type="text" [(ngModel)]="advisorDetails.firstname" name="firstname"  class="form-control" placeholder="firstname">
+
+
+
+                <input type="text" [(ngModel)]="advisorDetails.login" name="login"  class="form-control" placeholder="Login">
+
+  
+
+                <button class="btn btn-success btn-lg btn-block" (click)="addAdvisor()">Create advisor</button>
+            </div>
+        </form>
+    </div>
+</div>

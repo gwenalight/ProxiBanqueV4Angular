@@ -1,0 +1,50 @@
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  <h5 class="my-0 mr-md-auto font-weight-normal">Client Management</h5>
+  <nav class="my-2 my-md-0 mr-md-3">
+    <a class="btn btn-warning" routerLinkActive="active" routerLink="/create-client">Create Client</a>
+  </nav>
+  <a class="btn btn-info" routerLinkActive="active" routerLink="/clients-list">Clients List</a>
+</div>
+
+
+<div class="container custom-container-2">
+
+  
+    <div class="no-data text-center" *ngIf="client.length == 0">
+    <p>There is no client added yet!</p>
+    <button class="btn btn-outline-primary" routerLink="/create-client">Add client</button>
+  </div>
+
+  <div *ngIf="client.length !== 0">
+    <h3 class="mb-3 text-center">Clients List</h3>
+
+    <div class="col-md-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">lastname</th>
+            <th scope="col">firstname</th>
+            <th scope="col">phonenum</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let c of client">
+            <td>{{c.id}}</td>
+            <td>{{c.lastname}}</td>
+            <td>{{c.firstname}}</td> 
+            <td >{{c.phonenum}} {{c.email}}</td>
+            <td>
+                <button class="btn btn-info mr-1" routerLink="/client-show/{{c.id}}">Show</button>
+              <button class="btn btn-warning mr-1" routerLink="/client-edit/{{c.id}}">Edit</button>
+              <button class="btn btn-danger" (click)="deleteClient(c.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</div>

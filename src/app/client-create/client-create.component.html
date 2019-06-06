@@ -1,0 +1,38 @@
+<div class="container custom-container">
+    <div class="col-md-12">
+        <form #mainForm="ngForm">
+            <h3 class="mb-3 text-center">Create Client</h3>
+
+            <div class="form-group">
+                <input type="text" [(ngModel)]="client.lastname" name="lastname" class="form-control"
+                    placeholder="lastname">
+
+
+
+                <input type="text" [(ngModel)]="client.firstname" name="firstname" class="form-control"
+                    placeholder="firstname">
+
+                <input type="text" [(ngModel)]="client.phonenum" name="phonenum" class="form-control"
+                    placeholder="phonenum">
+
+
+
+                <input type="text" [(ngModel)]="client.email" name="email" class="form-control" placeholder="email">
+
+                <input type="text" [(ngModel)]="client.adress" name="adress" class="form-control" placeholder="adress">
+
+
+                <input type="text" [(ngModel)]="client.city" name="city" class="form-control" placeholder="city">
+
+
+                <input type="text" [(ngModel)]="client.postalcode" name="postalcode" class="form-control"
+                    placeholder="postalcode">
+
+
+
+
+                <button type="submit" class="btn btn-success btn-lg btn-block" (click)="addClient()">Create Client</button>
+            </div>
+        </form>
+    </div>
+</div>
